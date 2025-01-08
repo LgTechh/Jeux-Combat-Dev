@@ -1,0 +1,325 @@
+:root {
+  --main-bg-color: black;
+  --text-color: white;
+  --highlight-red: red;
+  --highlight-green: green;
+  --credit-color: orange;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Press Start 2P", serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--main-bg-color);
+}
+
+button {
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.starting-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  font-size: 1.8rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60%;
+}
+.logoImg {
+  height: 100%;
+}
+.startButton a {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: blue;
+  color: white;
+}
+.choix a {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: red;
+  padding: 10px;
+  color: white;
+}
+.choix a:hover {
+  -webkit-text-stroke-color: green;
+  font-size: 1.9rem;
+}
+.choix {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: red;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 40%;
+}
+.baspage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  height: 50%;
+  text-transform: uppercase;
+}
+.credit {
+  margin-top: 8%;
+  color: orange;
+}
+
+.select-champ {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  background-image: url("./assets/background/backvs.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.splasharts-container {
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.splashart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.splashart-container img {
+  height: 70%;
+}
+
+.splashart {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: appear 0.5s forwards;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.character-container {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.cover-container {
+  filter: grayscale(100%);
+  position: relative;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.character-cover {
+  object-fit: cover;
+  z-index: 0;
+  width: 100%;
+  height: 20%;
+  transition: all 0.5s;
+}
+
+.active {
+  filter: inherit;
+}
+
+.active .test {
+  display: block;
+}
+
+.cover-container:hover {
+  filter: inherit;
+}
+
+.player1 {
+  display: none;
+  position: absolute;
+  top: -20px;
+  left: -30px;
+  height: 40px;
+}
+
+.player2 {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: -15px;
+  right: -15px;
+  height: 35px;
+}
+
+.force {
+  display: block !important;
+}
+
+.annuler {
+  position: absolute;
+  bottom: 39%;
+  left: 47%;
+  width: 110px;
+  height: 40px;
+  background-color: transparent;
+  border-color: brown;
+  border-radius: 10px;
+  font-family: "Press Start 2P", serif;
+  color: brown;
+}
+
+.fighting-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/background/fight.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 50px;
+}
+
+.fighters {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.fighter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.current-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.frame {
+}
+
+.health-bar,
+.power-bar {
+  height: 20px;
+  display: flex;
+}
+
+.hp {
+  width: 80%;
+  background-color: green;
+}
+
+.lost-hp {
+  width: 20%;
+  background-color: red;
+}
+
+.power-remaiming {
+  background-color: grey;
+  width: 80%;
+}
+
+.power {
+  background-color: orange;
+  width: 20%;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.action-buttons button {
+  height: 100px;
+  width: 350px;
+  font-size: 35px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.attack-button {
+  background-color: red;
+}
+
+.defence-button {
+  background-color: blue;
+}
+
+.power-button {
+  background-color: orange;
+}
+
+.power-button:disabled {
+  cursor: not-allowed;
+  background-color: gray;
+}
