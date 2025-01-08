@@ -209,3 +209,21 @@ function retour() {
   Bouton attaque, défense, super (grisé tant que power par chargé)
   Charge en-dessous de chaque perso
 */
+
+Function(){
+  let PvJoueur = (actualhp / maxhp)*100
+  const hp = document.querySelector('.hp');
+  const hplost = document.querySelector('lost-hp');
+  let PourcenPvLost = 100 - PvJoueur;
+
+  const BarrePvActuel(){
+    hp.style.display = "width: ([$]Pvjoueur)"
+    hplost.style.display = "width: ([$]PourcenPvLost)"
+  }
+
+}
+
+
+
+
+
