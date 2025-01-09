@@ -111,46 +111,6 @@ const charactersList = [
 /**
  * @summary Disparition en fondu de la starting page et apparition en fondu de la prochaine page
  */
-// const toggleView = (page) => {
-//   if (page.classList.contains("starting-page")) {
-//     startingPage.classList.add("fade-out");
-
-//     startingPage.addEventListener(
-//       "animationend",
-//       () => {
-//         startingPage.style.display = "none";
-//         startingPage.classList.remove("fade-out");
-
-//         selectChamp.style.display = "flex";
-//         selectChamp.classList.add("fade-in");
-
-//         setTimeout(() => {
-//           selectChamp.classList.add("visible");
-//         }, 50);
-//       },
-//       { once: true },
-//     );
-//   } else {
-//     selectChamp.classList.add("fade-out");
-
-//     selectChamp.addEventListener(
-//       "animationend",
-//       () => {
-//         selectChamp.style.display = "none";
-//         selectChamp.classList.remove("fade-out");
-
-//         fightingPage.style.display = "flex";
-//         fightingPage.classList.add("fade-in");
-
-//         setTimeout(() => {
-//           fightingPage.classList.add("visible");
-//         }, 50);
-//       },
-//       { once: true },
-//     );
-//   }
-// };
-
 const toggleView = (page) => {
   if (page.classList.contains("starting-page")) {
     startingPage.classList.add("fade-out");
